@@ -1,5 +1,8 @@
+"""This module provides CRUD operations for managing cat documents in MongoDB."""
+
 import os
 from typing import List, Optional
+
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 from dotenv import load_dotenv
@@ -15,12 +18,12 @@ db = client[DB_NAME]
 collection = db[COLLECTION_NAME]
 
 
-def create_cat(name: str, age: int, features: list) -> str:
+def create_cat(name: str, age: int, features: List[str]) -> str:
     """Insert a new cat document into the collection."""
     try:
         result = collection.insert_one({"name": name, "age": age, "features": features})
         return str(result.inserted_id)
-    except Exception as e:
+    except PyMongoError as e:
         print(f"Error inserting cat: {e}")
         return ""
 

@@ -1,8 +1,14 @@
+"""
+This module loads quotes and author data from JSON files and imports them into
+a MongoDB database.
+"""
+
 import json
 import os
+from typing import List, Dict
+
 from pymongo import MongoClient
 from dotenv import load_dotenv
-from typing import List, Dict
 
 
 def load_json(filename: str) -> List[Dict]:

@@ -1,7 +1,10 @@
+"""This module scrapes quotes and author information from http://quotes.toscrape.com
+using BeautifulSoup and saves the data as JSON files."""
+
 import json
+from typing import List, Dict, Set, Tuple
 import requests
 from bs4 import BeautifulSoup
-from typing import List, Dict, Set, Tuple
 
 
 def get_soup(url: str, timeout: float = 10) -> BeautifulSoup:

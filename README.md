@@ -72,14 +72,3 @@ poetry python mongo_import.py
 ```
 
 ---
-
-## Notes
-
-- Remember to add `task_manager.db` to `.gitignore` to avoid committing the database file.
-- Use parameterized queries to prevent SQL injection.
-
-## License
-
-MIT License.
-
----
